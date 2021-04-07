@@ -5,6 +5,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y \
     python-rosdep \
     python-catkin-tools \
     python-vcstool \
+    python-pip \
   && rm -rf /var/lib/apt/lists/*
 
 # Clone the source code
@@ -18,6 +19,7 @@ RUN vcs import < leo-erc.repos
 RUN apt-get update \
   && rosdep update \
   && rosdep install --from-paths src -iy \
+  && pip install -r ./src/kamayuc_core/requirements.txt \
   && rm -rf /var/lib/apt/lists/*
 
 # Build the workspace
