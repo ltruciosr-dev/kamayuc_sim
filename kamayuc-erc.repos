@@ -1,0 +1,9 @@
+repositories:
+  src/kamayuc_core:
+    type: git
+    url: https://ltruciosr:Cepreuni15@gitlab.com/team-kamayuc/rover_navigation/kamayuc_core.git
+    version: master
+  src/kamayuc_simulation:
+    type: git
+    url: https://ltruciosr:Cepreuni15@gitlab.com/team-kamayuc/rover_navigation/kamayuc_simulation.git
+    version: master
