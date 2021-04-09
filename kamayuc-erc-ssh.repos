@@ -1,0 +1,25 @@
+repositories:
+  src/kamayuc_core/kamayuc_localization:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayuccore/kamayuc_localization.git
+    version: master
+  src/kamayuc_core/kamayuc_planning:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayuccore/kamayuc_planning.git
+    version: master
+  src/kamayuc_core/kamayuc_localization:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayuccore/kamayuc_perception.git
+    version: master
+  src/kamayuc_sim/world_description:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayucrover/world_description.git
+    version: master
+  src/kamayuc_sim/artag_description:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayucrover/artag_description.git
+    version: master
+  src/kamayuc_sim/erc_gazebo:
+    type: git
+    url: git@gitlab.com:team-kamayuc/rover_navigation/kamayucrover/erc_gazebo.git
+    version: master

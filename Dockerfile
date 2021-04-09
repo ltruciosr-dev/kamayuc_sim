@@ -19,7 +19,7 @@ RUN vcs import < leo-erc.repos
 RUN apt-get update \
   && rosdep update \
   && rosdep install --from-paths src -iy \
-  && pip install -r ./src/kamayuc_core/requirements.txt \
+  && pip install pandas \
   && rm -rf /var/lib/apt/lists/*
 
 # Build the workspace
