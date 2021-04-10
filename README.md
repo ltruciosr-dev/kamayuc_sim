@@ -75,12 +75,6 @@ Use `vcstool` tool to clone any new repositories:
 vcs import < kamayuc-erc.repos
 vcs import < leo-erc.repos
 ```
----
-**NOTE**
-
-If your account has a SSH agent connected to the [Kamayuc Gitlab project](https://gitlab.com/team-kamayuc/rover_navigation/kamayucrover), import `kamayuc-erc-ssh.repos` instead of `kamayuc-erc.repos`.
-
----
 
 And pull the new commits on the already cloned ones:
 ```
@@ -132,6 +126,11 @@ Build the docker image by executing:
 To use an Nvidia card, you need to previously install proprietary drivers and Nvidia Container Toolkit (https://github.com/NVIDIA/nvidia-docker). Next execute command:
 ``` 
 bash run_docker_NVIDIA.bash
+```
+
+To update the docker image, you need to rebuild it with:
+```
+./build_erc.sh 
 ```
 
 There are two ways to execute nodes and interact with the simulation inside the docker:
