@@ -20,12 +20,12 @@ It is recommended to clone the wiki repo on a `/docker` directory.
 mkdir -p ~/docker && cd ~/docker
 git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
 cd erc_sim/
-cp *.repos ~/ros/kamayuc_ws/
 ```
 
 It is also recommended to create a dedicated workspace for the competition and copy there the `repos` files.
 ```
 mkdir -p ~/ros/kamayuc_ws
+cp *.repos ~/ros/kamayuc_ws/
 cd ~/ros/kamayuc_ws
 ```
 
