@@ -18,7 +18,11 @@ There is also a dockerized version which should work on most Linux distributions
 It is recommended to create a dedicated workspace for the competition and copy there the `repos` files.
 ```
 mkdir -p ~/ros/kamayuc_ws/
+git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
+cd erc_sim/
 cp *.repos ~/ros/kamayuc_ws/
+cd ..
+rm -rf erc_sim
 cd ~/ros/kamayuc_ws/
 ```
 
