@@ -15,16 +15,23 @@ There is also a dockerized version which should work on most Linux distributions
 
 ## Building
 
-It is recommended to create a dedicated workspace for the competition and copy there the `repos` files.
+It is recommended to clone the wiki repo on a `/docker` directory.
 ```
-mkdir -p ~/ros/kamayuc_ws/
+mkdir -p ~/docker && cd ~/docker
 git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
 cd erc_sim/
 cp *.repos ~/ros/kamayuc_ws/
-cd ..
-rm -rf erc_sim
-cd ~/ros/kamayuc_ws/
 ```
+
+It is also recommended to create a dedicated workspace for the competition and copy there the `repos` files.
+```
+mkdir -p ~/ros/kamayuc_ws
+cd ~/ros/kamayuc_ws
+```
+
+Edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
+- username
+- password
 
 Use the `vcstool` tool to clone the required packages:
 ```
@@ -106,10 +113,16 @@ Make sure the [Docker Engine](https://docs.docker.com/engine/install/#server) is
 systemctl start docker
 ```
 
-Edit the file [kamayuc-erc.repos](kamayuc-erc.repos) and add your gitlab credentials, to be able to install kamayuc private repositories.
+It is recommended to clone the repository on a `~/docker` directory.
 ```
-url: https://<username>:<password>@gitlab.com/team-kamayuc/rover_navigation/<package>.git
+mkdir -p ~/docker && cd ~/docker
+git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
+cd erc_sim/
 ```
+
+Edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
+- username
+- password
 
 Build the docker image by executing:
 ```
