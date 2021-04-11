@@ -6,6 +6,7 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y \
     python-catkin-tools \
     python-vcstool \
     python-pip \
+    htop \
   && rm -rf /var/lib/apt/lists/*
 
 # Clone the source code
