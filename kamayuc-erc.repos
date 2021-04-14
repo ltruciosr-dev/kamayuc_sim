@@ -7,7 +7,7 @@ repositories:
     type: git
     url: https://<username>:<password>@gitlab.com/team-kamayuc/rover_navigation/kamayuccore/kamayuc_planning.git
     version: master
-  src/kamayuc_core/kamayuc_localization:
+  src/kamayuc_core/kamayuc_perception:
     type: git
     url: https://<username>:<password>@gitlab.com/team-kamayuc/rover_navigation/kamayuccore/kamayuc_perception.git
     version: master
