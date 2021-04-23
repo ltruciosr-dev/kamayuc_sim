@@ -1,4 +1,4 @@
-docker create --rm -it \
+docker create -it \
     --name erc_sim \
     --gpus all \
 	--env="DISPLAY=:1" \
