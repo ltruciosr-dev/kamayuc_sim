@@ -10,7 +10,7 @@ def setCredentials(username, password):
         repos = yaml.load(file, Loader=yaml.FullLoader)
         for key, value in repos['repositories'].items():
             url = "@"+value['url'].split('@')[1]
-            value['url'] = "https://" +f"{Fore.CYAN}"+username + ":" + password+f"{Style.RESET_ALL}" + url
+            value['url'] = "https://" +username + ":" + password + url
             print(value['url'])
     
     #Write HTTPS File
