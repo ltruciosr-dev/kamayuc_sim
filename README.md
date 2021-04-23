@@ -29,7 +29,14 @@ cp *.repos ~/ros/kamayuc_ws/
 cd ~/ros/kamayuc_ws
 ```
 
-Edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
+**Insert your Gitlab Credentials**
+
+Insert your username and password executing the following command:
+```
+python repo_credentials.py
+```
+
+Also you can edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
 - username
 - password
 
@@ -121,7 +128,7 @@ Insert your username and password executing the following command:
 python repo_credentials.py
 ```
 
-Also you could edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
+Also you can edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
 - username
 - password
 
