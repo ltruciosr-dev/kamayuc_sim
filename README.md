@@ -114,20 +114,19 @@ git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
 cd erc_sim/
 ```
 
-**Insert your Gitlab Credentials [New method]**
+**Insert your Gitlab Credentials**
 
 Insert your username and password executing the following command:
 ```
 python repo_credentials.py
 ```
 
-**Insert your Gitlab Credentials [Deprecated Method]**
-
-Edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
+Also you could edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
 - username
 - password
 
 **Build the docker image**
+
 Build the docker image by executing:
 ```
 ./build_erc.sh 
