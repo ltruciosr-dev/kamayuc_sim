@@ -1,5 +1,5 @@
 docker create -it \
-    --name erc_sim \
+    --name erc_remote \
     --gpus all \
 	--env="DISPLAY=:1" \
     --env="QT_X11_NO_MITSHM=1" \
@@ -11,4 +11,4 @@ docker create -it \
     --privileged \
     --network=host \
     --volume="/dev:/dev" \
-    erc_sim
+    erc_remote

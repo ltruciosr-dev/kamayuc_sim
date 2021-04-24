@@ -18,8 +18,8 @@ There is also a dockerized version which should work on most Linux distributions
 It is recommended to clone the wiki repo on a `/docker` directory.
 ```
 mkdir -p ~/docker && cd ~/docker
-git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
-cd erc_sim/
+git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_remote.git
+cd erc_remote/
 ```
 
 It is also recommended to create a dedicated workspace for the competition and copy there the `repos` files.
@@ -117,8 +117,8 @@ systemctl start docker
 It is recommended to clone the repository on a `~/docker` directory.
 ```
 mkdir -p ~/docker && cd ~/docker
-git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_sim.git
-cd erc_sim/
+git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_remote.git
+cd erc_remote/
 ```
 
 **Insert your Gitlab Credentials**
@@ -170,22 +170,22 @@ xhost +local:root
 
 Start the container:
 ```
-docker start erc_sim
+docker start erc_remote
 ```
 
 To start any other ROS nodes inside the container, type:
 ```
-docker exec -it erc_sim /ros_entrypoint.sh <COMMAND>
+docker exec -it erc_remote /ros_entrypoint.sh <COMMAND>
 ```
 
 For example:
 ```
-docker exec -it erc_sim /ros_entrypoint.sh roslaunch leo_gazebo leo_marsyard.launch
+docker exec -it erc_remote /ros_entrypoint.sh roslaunch leo_gazebo leo_marsyard.launch
 ```
 
 To update the docker image, you need to rebuild it with `--no-cache` option:
 ```
-docker build --no-cache -t erc_sim .
+docker build --no-cache -t erc_remote .
 ```
 
 ### **2. VSCode Docker**
