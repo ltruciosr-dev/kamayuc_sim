@@ -10,7 +10,7 @@ def setCredentials(username, password):
         repos = yaml.load(file, Loader=yaml.FullLoader)
         for key, value in repos['repositories'].items():
             url = "@gitlab.com/"+value['url'].split(':')[1]
-            value['url'] = "https://" +username + ":" + password + url
+            value['url'] = "https://" + username + ":" + password + url
             print(value['url'])
     
     #Write HTTPS File
@@ -18,11 +18,7 @@ def setCredentials(username, password):
         yaml.dump(repos,file,default_flow_style=False)
 
 
-        
-
-
 while True:
-    
     # Clear terminal
     system('clear')
 
