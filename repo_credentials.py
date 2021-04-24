@@ -9,7 +9,7 @@ def setCredentials(username, password):
     with open('kamayuc-erc-ssh.repos','r') as file:
         repos = yaml.load(file, Loader=yaml.FullLoader)
         for key, value in repos['repositories'].items():
-            url = "@"+value['url'].split('@')[1]
+            url = "@gitlab.com/"+value['url'].split(':')[1]
             value['url'] = "https://" +username + ":" + password + url
             print(value['url'])
     
