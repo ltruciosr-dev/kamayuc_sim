@@ -11,8 +11,8 @@ RUN apt-get update && apt-get -y upgrade && apt-get install -y \
 
 # Clone the source code
 WORKDIR /sim_ws
-COPY kamayuc-erc.repos ./
-COPY leo-erc.repos ./
+COPY *.repos ./
+RUN vcs import < dependencies.repos
 RUN vcs import < kamayuc-erc.repos
 RUN vcs import < leo-erc.repos
 

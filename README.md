@@ -2,6 +2,13 @@
 
 This repository contains simulations of the Kamayuc and Leo rovers developed from the [Kamayuc Team](https://www.facebook.com/Kamayuc) for the ERC2021 Challengue.
 
+There is two ways to install the development workspace:
+1. [Local Installation](#1-local-installation)
+1. [Docker Installation](#2-docker-installation)
+
+
+# 1. Local Installation
+
 ## Requirements
 
 The simulation is mainly developed and tested on [Ubuntu 18.04 Bionic Beaver](https://releases.ubuntu.com/18.04/) with [ROS Melodic Morenia](http://wiki.ros.org/melodic/Installation/Ubuntu), so it is a recommended setup. 
@@ -22,13 +29,6 @@ git clone https://gitlab.com/team-kamayuc/rover_navigation/erc_remote.git
 cd erc_remote/
 ```
 
-It is also recommended to create a dedicated workspace for the competition and copy there the `repos` files.
-```
-mkdir -p ~/ros/kamayuc_ws
-cp *.repos ~/ros/kamayuc_ws/
-cd ~/ros/kamayuc_ws
-```
-
 **Insert your Gitlab Credentials**
 
 Insert your username and password executing the following command:
@@ -40,10 +40,20 @@ Also you can edit the file `kamayuc-erc.repos` and add your [GitLab](https://git
 - username
 - password
 
+**Copy and clone the required packages**
+
+It is also recommended to create a dedicated workspace for the competition and copy there the `repos` files.
+```
+mkdir -p ~/ros/kamayuc_ws
+cp *.repos ~/ros/kamayuc_ws/
+cd ~/ros/kamayuc_ws
+```
+
 Use the `vcstool` tool to clone the required packages:
 ```
 vcs import < kamayuc-erc.repos
 vcs import < leo-erc.repos
+vcs import < dependencies.repos
 ```
 ---
 **NOTE**
@@ -81,6 +91,7 @@ Use `vcstool` tool to clone any new repositories:
 ```
 vcs import < kamayuc-erc.repos
 vcs import < leo-erc.repos
+vcs import < dependencies.repos
 ```
 
 And pull the new commits on the already cloned ones:
@@ -98,7 +109,9 @@ And rebuild the workspace:
 catkin build
 ```
 
-## Docker Setup
+# 2. Docker Installation
+
+## Requirements
 
 It is needed to install [docker](https://docs.docker.com/engine/install/ubuntu/) and [nvidia-docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html)
 
@@ -113,6 +126,8 @@ Make sure the [Docker Engine](https://docs.docker.com/engine/install/#server) is
 ```
 systemctl start docker
 ```
+
+## Building
 
 It is recommended to clone the repository on a `~/docker` directory.
 ```
@@ -139,23 +154,30 @@ Build the docker image by executing:
 ./build_erc.sh 
 ```
 
-To use an Nvidia card, you need to previously install proprietary drivers and Nvidia Container Toolkit (https://github.com/NVIDIA/nvidia-docker). Next execute command:
+To use an Nvidia GPU card, you need to previously install proprietary drivers and Nvidia Container Toolkit (https://github.com/NVIDIA/nvidia-docker). Next execute command:
 ``` 
 bash run_docker_NVIDIA.bash
 ```
+---
+**NOTE**
+
+If your computer/notebook doesn't have an nvidia GPU card, execute instead the next command:
+```
+bash run_docker_CPU.bash
+```
+
+---
+
+## Update
 
 To update the docker image, you need to rebuild it with:
 ```
 ./build_erc.sh 
 ```
 
-There are two ways to execute nodes and interact with the simulation inside the docker:
+Remember that it will delete all the files that you've added/modified in the container. It is recommended to update the docker image once your changes are added in the GitLab repos.
 
-1. The docker container should be visibile inside the vscode `remote-container` [pluggin](#docker-vscode), you can start the docker there.
-
-2. The typical docker configuration via linux [terminal](#docker-local).
-
-## Docker Run
+## Running
 
 ---
 **NOTE**
@@ -165,6 +187,12 @@ Run the following command every time your computer is restarted.
 xhost +local:root
 ```
 ---
+
+There are two ways to execute nodes and interact with the simulation inside the docker:
+
+1. [Local Docker](#1-local-docker): The typical docker configuration via linux terminal.
+
+2. [VSCode Docker](#2-vscode-docker): The docker container should be visibile inside the vscode plugin [remote-container](https://github.com/Microsoft/vscode-remote-release).
 
 ### **1. Local Docker**
 
