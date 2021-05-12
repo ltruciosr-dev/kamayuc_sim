@@ -239,3 +239,44 @@ Moreover, you can source the workspace and explore all the available launchs.
 source /sim_ws/devel/setup.bash
 roslaunch <package> <launch>
 ```
+
+## Troubleshooting
+
+**Error with repo_credentials.py : Invalid Syntax**
+
+```
+pip install colorama
+pip install -U PyYAML
+```
+
+**Gazebo Simulator : Core Dumped - Docker Installation**
+Run the command below and check output:
+```
+roslaunch erc_gazebo erc_sim.launch verbose:=true
+```
+If there is a error related to:
+Can't open display: :0
+It might be that the display chosen is wrong.
+
+Run the following command to print the display number:
+```
+echo $DISPLAY
+```
+Then edit the file "run_docker_NVIDIA.bash":
+
+Modify the line with the display number printed before.
+```
+--env="DISPLAY=:<$DISPLAY>" \
+```
+Example:
+```
+--env="DISPLAY=:0" \
+```
+Run the following bash script , then run gazebo.
+
+```
+bash run_docker_CPU.bash
+
+```
+
+
