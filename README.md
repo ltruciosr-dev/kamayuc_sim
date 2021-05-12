@@ -240,7 +240,7 @@ source /sim_ws/devel/setup.bash
 roslaunch <package> <launch>
 ```
 
-## Troubleshooting
+# Troubleshooting
 
 **Error with repo_credentials.py : Invalid Syntax**
 
