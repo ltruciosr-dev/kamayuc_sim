@@ -245,8 +245,14 @@ roslaunch <package> <launch>
 **Error with repo_credentials.py : Invalid Syntax**
 
 ```
-pip install colorama
-pip install -U PyYAML
+pip3 install colorama
+pip3 install -U PyYAML
+```
+
+**Error with repo_credentials.py : AtributeError(yaml)**
+
+```
+pip3 install pyyaml==5.1
 ```
 
 **Gazebo Simulator : Core Dumped - Docker Installation**
