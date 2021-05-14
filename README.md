@@ -33,7 +33,7 @@ cd erc_remote/
 
 Insert your username and password executing the following command:
 ```
-python3 repo_credentials.py
+python repo_credentials.py
 ```
 
 Also you can edit the file `kamayuc-erc.repos` and add your [GitLab](https://gitlab.com/.com) credentials in all `url:` lines, to be able to install the kamayuc private repositories:
