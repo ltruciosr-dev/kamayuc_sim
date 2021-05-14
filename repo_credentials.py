@@ -1,5 +1,4 @@
 from os import system
-from colorama import Fore,Style
 import yaml
 
 
@@ -23,21 +22,21 @@ while True:
     system('clear')
 
     # Get username
-    print(f"{Fore.BLUE}Insert your Gitlab Username:{Style.RESET_ALL}")
-    username = input()
+    print("Insert your Gitlab Username:")
+    username = raw_input()
 
     # Get password
-    print(f"{Fore.BLUE}Insert your password:{Style.RESET_ALL}")
-    password = input()
+    print("Insert your password:")
+    password = raw_input()
     
     system('clear')
     # Verify credentials
-    print(f"{Fore.MAGENTA}Check your credentials:{Style.RESET_ALL}")
-    print(f"{Fore.CYAN}Username:{Style.RESET_ALL} " + username)
-    print(f"{Fore.CYAN}Password:{Style.RESET_ALL} " + password)
-    print(f"{Fore.YELLOW}Please be sure , this could affect your docker installation{Style.RESET_ALL}")
-    print(f"These are your credentials? Write{Fore.CYAN}[yes/no/cancel]{Style.RESET_ALL}")
-    answer = input()
+    print("Check your credentials:")
+    print("Username:" + username)
+    print("Password:" + password)
+    print("Please be sure , this could affect your docker installation")
+    print("These are your credentials? Write[yes/no/cancel]")
+    answer = raw_input()
 
     if(answer == "yes"):
         setCredentials(username, password)
