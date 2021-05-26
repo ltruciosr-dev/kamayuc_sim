@@ -23,11 +23,11 @@ while True:
 
     # Get username
     print("Insert your Gitlab Username:")
-    username = raw_input()
+    username = input()
 
     # Get password
     print("Insert your password:")
-    password = raw_input()
+    password = input()
     
     system('clear')
     # Verify credentials
@@ -36,7 +36,7 @@ while True:
     print("Password:" + password)
     print("Please be sure , this could affect your docker installation")
     print("These are your credentials? Write[yes/no/cancel]")
-    answer = raw_input()
+    answer = input()
 
     if(answer == "yes"):
         setCredentials(username, password)
